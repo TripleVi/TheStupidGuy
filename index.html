@@ -33,8 +33,9 @@
     </main>
 
     <script>
+        const baseUrl = 'https://the-stupid-guy.onrender.com'
         document.getElementById('firstBtn').onclick = async () => {
-            const response = await fetch('http://localhost:3000/api/v1/test', {
+            const response = await fetch(`${baseUrl}/api/v1/test`, {
                 method: 'GET',
                 credentials: 'include',
                 headers: {
@@ -45,7 +46,7 @@
             console.log(myJson)
         }
         document.getElementById('secondBtn').onclick = async () => {
-            const response = await fetch('http://localhost:3000/api/v1/test', {
+            const response = await fetch(`${baseUrl}/api/v1/test`, {
                 method: 'POST',
                 body: JSON.stringify({
                     'username': 'tripleVi2001',
@@ -60,7 +61,7 @@
             console.log(myJson)
         }
         document.getElementById('thirdBtn').onclick = async () => {
-            const response = await fetch('http://localhost:3000/api/v1/test', {
+            const response = await fetch(`${baseUrl}/api/v1/test`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
