@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 const app = express()
 
 app.use(cors({
-    origin: "*",
+    origin: 'https://triplevi.github.io',
     optionsSuccessStatus: 200,
     credentials: true,
 }))
@@ -31,14 +31,18 @@ app.get('/api/v1/test', (req, res) => {
     // }
     console.log(req.session.id)
     console.log(req.sessionID)
-    res.send('hello world')
+    res.send({
+        'data': 'hello world'
+    })
 })
 
 app.post('/api/v1/test', (req, res) => {
     console.log(req.session)
     console.log(req.session.id)
     console.log(req.sessionID)
-    res.send('hello world')
+    res.send({
+        data: 'hello world'
+    })
 })
 
 const port = process.env.PORT || 3000
