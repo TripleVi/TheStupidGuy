@@ -33,7 +33,8 @@
     </main>
 
     <script>
-        const baseUrl = 'https://the-stupid-guy.onrender.com'
+        // const baseUrl = 'https://the-stupid-guy.onrender.com'
+        const baseUrl = 'http://localhost:3000'
         document.getElementById('firstBtn').onclick = async () => {
             const response = await fetch(`${baseUrl}/api/v1/test`, {
                 method: 'GET',
