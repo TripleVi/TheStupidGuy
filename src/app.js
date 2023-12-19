@@ -1,8 +1,16 @@
 import express from 'express';
 import session from 'express-session';
+import cors from 'cors';
 import bodyParser from 'body-parser';
 
 const app = express()
+
+app.use(cors({
+    origin: "*",
+    optionsSuccessStatus: 200,
+    credentials: true,
+}))
+
 app.use(session({
     secret: 'session secret',
     resave: false,
