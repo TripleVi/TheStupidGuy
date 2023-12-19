@@ -43,6 +43,7 @@ app.get('/api/v1/test', (req, res) => {
         'address': 'hp',
     }
     console.log(req.session)
+    console.log(req.session.id)
     // req.session.save(err => {
     //     console.log(err)
     // })
@@ -57,8 +58,6 @@ app.get('/api/v1/test', (req, res) => {
 })
 
 app.post('/api/v1/test', (req, res) => {
-    console.log(req.headers['cookie'])
-    console.log(req.headers['set-cookie'])
     console.log(req.session)
     console.log(req.session.id)
     res.send({
