@@ -39,8 +39,8 @@ app.use(bodyParser.json())
 
 app.get('/api/v1/test', (req, res) => {
     req.session.User = {
-        'name': 'triple vi',
-        'address': 'hp',
+        'uid': Math.floor(Math.random() * 1000),
+        'username': (Math.random() + 1).toString(36).substring(2),
     }
     console.log(req.session)
     console.log(req.session.id)
