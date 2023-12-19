@@ -35,7 +35,7 @@
         document.getElementById('firstBtn').onclick = async () => {
             const response = await fetch('http://localhost:3000/api/v1/test', {
                 method: 'GET',
-                // credentials: 'include',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
                 }

@@ -25,12 +25,13 @@ app.use(session({
 app.use(bodyParser.json())
 
 app.get('/api/v1/test', (req, res) => {
-    // req.session.User = {
-    //     'name': 'triple vi',
-    //     'address': 'hp',
-    // }
-    console.log(req.session.id)
+    req.session.User = {
+        'name': 'triple vi',
+        'address': 'hp',
+    }
+    console.log(req.session)
     console.log(req.sessionID)
+    // res.setHeader('')
     res.send({
         'data': 'hello world'
     })
