@@ -59,7 +59,7 @@
             const myJson = await response.json()
             console.log(myJson)
         }
-        document.getElementById('third').onclick = async () => {
+        document.getElementById('thirdBtn').onclick = async () => {
             const response = await fetch('http://localhost:3000/api/v1/test', {
                 method: 'GET',
                 headers: {
