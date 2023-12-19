@@ -24,9 +24,8 @@ app.use(cors({
 }))
 
 app.use(session({
-    name: 'access_token',
     secret: 'session secret',
-    store: store,
+    // store: store,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -34,7 +33,6 @@ app.use(session({
         httpOnly: false,
         maxAge: 60000,
         sameSite: 'none',
-        domain: 'localhost'
     },
 }))
 
@@ -47,15 +45,13 @@ app.get('/api/v1/test', (req, res) => {
     }
     console.log(req.session)
     console.log(req.sessionID)
-    // res.cookie('access_token', req.session.cookie, {
-    //     secure: false,
-    //     httpOnly: false,
-    //     maxAge: 60000,
-    //     sameSite: 'none',
-    // })
+    console.log('test', req.session)
     res.send({
-        'id': req.session.id
+        data: 'hello world'
     })
+    // res.setHeader('Set-Cookie', req.session.cookie).send({
+    //     'id': req.session.id
+    // })
 })
 
 app.post('/api/v1/test', (req, res) => {
