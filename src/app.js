@@ -2,17 +2,17 @@ import express from 'express';
 import session from 'express-session';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import MongoDBStore from "connect-mongodb-session";
+// import MongoDBStore from "connect-mongodb-session";
 
 const app = express()
 
-const mongoStore = MongoDBStore(session);
+// const mongoStore = MongoDBStore(session);
 
-const store = new mongoStore({
-  collection: "userSessions",
-  uri: process.env.mongoURI,
-  expires: 1000,
-});
+// const store = new mongoStore({
+//   collection: "userSessions",
+//   uri: process.env.mongoURI,
+//   expires: 1000,
+// });
 
 // app.set("trust proxy", 1);
 
