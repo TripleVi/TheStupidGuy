@@ -28,6 +28,7 @@
         <div class="container">
             <div class="button" id="firstBtn">First Button</div>
             <div class="button" id="secondBtn">Second Button</div>
+            <div class="button" id="thirdtBtn">Third Button</div>
         </div>
     </main>
 
@@ -51,6 +52,16 @@
                     'password': '123456789'
                 }),
                 credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const myJson = await response.json()
+            console.log(myJson)
+        }
+        document.getElementById('third').onclick = async () => {
+            const response = await fetch('http://localhost:3000/api/v1/test', {
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json'
                 }
