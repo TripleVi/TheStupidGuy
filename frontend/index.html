@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container .button {
+            width: fit-content;
+            font-size: 20.0px;
+            font-weight: 500;
+            padding: 12.0px;
+            color: white;
+            background-color: aquamarine;
+            border-radius: 8.0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="button" id="firstBtn">First Button</div>
+            <div class="button" id="secondBtn">Second Button</div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('firstBtn').onclick = async () => {
+            const response = await fetch('http://localhost:3000/api/v1/test', {
+                method: 'GET',
+                // credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const myJson = await response.json()
+            console.log(myJson)
+        }
+        document.getElementById('secondBtn').onclick = async () => {
+            const response = await fetch('http://localhost:3000/api/v1/test', {
+                method: 'POST',
+                body: {
+                    'username': 'tripleVi2001',
+                    'password': '123456789',
+                },
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const myJson = await response.json()
+            console.log(myJson)
+        }
+    </script>
+</body>
+</html>
