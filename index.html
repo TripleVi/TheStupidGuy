@@ -46,10 +46,10 @@
         document.getElementById('secondBtn').onclick = async () => {
             const response = await fetch('http://localhost:3000/api/v1/test', {
                 method: 'POST',
-                body: {
+                body: JSON.stringify({
                     'username': 'tripleVi2001',
                     'password': '123456789'
-                },
+                }),
                 credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json'
