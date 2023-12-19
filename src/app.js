@@ -14,13 +14,12 @@ const app = express()
 //   expires: 1000,
 // });
 
-// app.set("trust proxy", 1);
+app.set("trust proxy", 1);
 
 app.use(cors({
     origin: 'https://triplevi.github.io',
     optionsSuccessStatus: 200,
     credentials: true,
-    exposedHeaders: ['set-cookie'],
 }))
 
 app.use(session({
@@ -44,14 +43,17 @@ app.get('/api/v1/test', (req, res) => {
         'address': 'hp',
     }
     console.log(req.session)
-    console.log(req.sessionID)
-    console.log('test', req.session)
+    // req.session.save(err => {
+    //     console.log(err)
+    // })
+    // req.session.
+    // console.log(req.signedCookies)
+    // req.sessionStore.get(req.sessionID, (error, session) => {
+    //     console.log('retrieved', session)
+    // })
     res.send({
         data: 'hello world'
     })
-    // res.setHeader('Set-Cookie', req.session.cookie).send({
-    //     'id': req.session.id
-    // })
 })
 
 app.post('/api/v1/test', (req, res) => {
